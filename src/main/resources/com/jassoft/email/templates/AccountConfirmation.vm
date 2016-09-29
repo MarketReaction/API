@@ -1,0 +1,10 @@
+Hi ${user.forename} ${user.surname}
+						
+To Activate your new Market Reaction account please navigate to the Activation Link Below and enter the Activation Code
+
+http://console.market-reaction.com/#/register/confirm
+
+Activation Code: ${user.activationId}
+
+Kind Regards
+The Market Reaction Team 

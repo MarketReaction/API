@@ -1,0 +1,26 @@
+<style>
+body {
+	background-color: #f8f8f8;
+}
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+</style>
+
+<div class="container">					
+
+	<img alt="Market Reaction" width="400px" src="http://market-reaction.com/images/marketreaction.png" />	
+	
+	<h3>Hi ${user.forename} ${user.surname}</h3>
+					
+	<p>To Activate your new Market Reaction account please click on the Activation Link Below</p>
+	
+	<p><a href="http://console.market-reaction.com/#/register/confirm?activationId=${user.activationId}">Activate Now!</a></p>
+	
+	<p>Kind Regards<br />
+	The Market Reaction Team</p>                   
+</div>
