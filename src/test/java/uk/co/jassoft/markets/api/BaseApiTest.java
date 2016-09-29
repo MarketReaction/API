@@ -25,7 +25,7 @@ import java.util.*;
         "spring.data.mongodb.database=" + BaseApiTest.DB_NAME,
         "server.port=0",
         "OAUTH_GOOGLE_TOKEN=Test"})
-public class BaseApiTest extends BaseTest {
+public abstract class BaseApiTest extends BaseTest {
 
     protected final String HEADER_SECURITY_TOKEN = "X-AuthToken";
     protected final String HEADER_SECURITY_EMAIL = "X-AuthEmail";
