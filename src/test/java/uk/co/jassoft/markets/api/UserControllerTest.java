@@ -25,7 +25,8 @@ import static org.hamcrest.CoreMatchers.equalTo;
 @SpringApplicationConfiguration(classes = SpringConfiguration.class)
 @WebIntegrationTest({
         "spring.data.mongodb.database=" + BaseApiTest.DB_NAME,
-        "server.port=0"})
+        "server.port=0",
+        "OAUTH_GOOGLE_TOKEN=Test"})
 public class UserControllerTest extends BaseApiTest {
 
     @Value("${local.server.port}")
