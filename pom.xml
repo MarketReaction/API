@@ -281,7 +281,7 @@
                                     <goal>build</goal>
                                 </goals>
                                 <configuration>
-                                    <imageName>${docker.image.prefix}/${project.artifactId}-x86:${BUILD_NUMBER}
+                                    <imageName>${docker.image.prefix}/${project.artifactId}:${TRAVIS_BUILD_NUMBER}-x86
                                     </imageName>
                                     <dockerDirectory>${project.basedir}/src/main/docker-x86</dockerDirectory>
                                     <resources>
@@ -293,7 +293,7 @@
                                     </resources>
                                     <forceTags>true</forceTags>
                                     <imageTags>
-                                        <imageTag>${BUILD_NUMBER}</imageTag>
+                                        <imageTag>${TRAVIS_BUILD_NUMBER}-x86</imageTag>
                                     </imageTags>
                                 </configuration>
                             </execution>
@@ -304,7 +304,7 @@
                                     <goal>push</goal>
                                 </goals>
                                 <configuration>
-                                    <imageName>${docker.image.prefix}/${project.artifactId}-x86:${BUILD_NUMBER}
+                                    <imageName>${docker.image.prefix}/${project.artifactId}:${TRAVIS_BUILD_NUMBER}-x86
                                     </imageName>
                                 </configuration>
                             </execution>
@@ -316,7 +316,7 @@
                                     <goal>build</goal>
                                 </goals>
                                 <configuration>
-                                    <imageName>${docker.image.prefix}/${project.artifactId}:${BUILD_NUMBER}</imageName>
+                                    <imageName>${docker.image.prefix}/${project.artifactId}:${TRAVIS_BUILD_NUMBER}</imageName>
                                     <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
                                     <resources>
                                         <resource>
@@ -327,7 +327,7 @@
                                     </resources>
                                     <forceTags>true</forceTags>
                                     <imageTags>
-                                        <imageTag>${BUILD_NUMBER}</imageTag>
+                                        <imageTag>${TRAVIS_BUILD_NUMBER}</imageTag>
                                     </imageTags>
                                 </configuration>
                             </execution>
@@ -338,7 +338,7 @@
                                     <goal>push</goal>
                                 </goals>
                                 <configuration>
-                                    <imageName>${docker.image.prefix}/${project.artifactId}:${BUILD_NUMBER}</imageName>
+                                    <imageName>${docker.image.prefix}/${project.artifactId}:${TRAVIS_TRAVIS_BUILD_NUMBER}</imageName>
                                 </configuration>
                             </execution>
                         </executions>
