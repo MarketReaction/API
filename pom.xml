@@ -338,7 +338,7 @@
                                     <goal>push</goal>
                                 </goals>
                                 <configuration>
-                                    <imageName>${docker.image.prefix}/${project.artifactId}:${TRAVIS_TRAVIS_BUILD_NUMBER}</imageName>
+                                    <imageName>${docker.image.prefix}/${project.artifactId}:${TRAVIS_BUILD_NUMBER}</imageName>
                                 </configuration>
                             </execution>
                         </executions>
