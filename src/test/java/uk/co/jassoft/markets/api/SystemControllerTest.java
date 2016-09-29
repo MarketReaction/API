@@ -1,23 +1,19 @@
 package uk.co.jassoft.markets.api;
 
-import uk.co.jassoft.markets.datamodel.story.StoryBuilder;
-import uk.co.jassoft.markets.datamodel.story.metric.MetricBuilder;
-import uk.co.jassoft.markets.datamodel.system.SystemProfile;
-import uk.co.jassoft.markets.repository.StoryRepository;
-import uk.co.jassoft.markets.repository.SystemProfileRepository;
 import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.response.ExtractableResponse;
 import com.jayway.restassured.response.Response;
 import org.joda.time.DateTime;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
+import uk.co.jassoft.markets.datamodel.story.StoryBuilder;
+import uk.co.jassoft.markets.datamodel.story.metric.MetricBuilder;
+import uk.co.jassoft.markets.datamodel.system.SystemProfile;
+import uk.co.jassoft.markets.repository.StoryRepository;
+import uk.co.jassoft.markets.repository.SystemProfileRepository;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,11 +24,6 @@ import static com.jayway.restassured.RestAssured.given;
 /**
  * Created by jonshaw on 25/09/15.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = SpringConfiguration.class)
-@WebIntegrationTest({
-        "spring.data.mongodb.database=" + BaseApiTest.DB_NAME,
-        "server.port=0"})
 public class SystemControllerTest extends BaseApiTest {
 
     @Autowired

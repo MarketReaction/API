@@ -1,19 +1,10 @@
 package uk.co.jassoft.markets.api;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * Created by jonshaw on 23/09/15.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = SpringConfiguration.class)
-@WebIntegrationTest({
-        "spring.data.mongodb.database=" + BaseApiTest.DB_NAME,
-        "server.port=0"})
 public class CompanyControllerTest extends BaseApiTest {
 
     private final String HEADER_SECURITY_TOKEN = "X-AuthToken";

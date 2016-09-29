@@ -1,16 +1,12 @@
 package uk.co.jassoft.markets.api;
 
-import uk.co.jassoft.markets.datamodel.user.User;
 import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.response.Response;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import uk.co.jassoft.markets.datamodel.user.User;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,12 +17,6 @@ import static org.hamcrest.CoreMatchers.equalTo;
 /**
  * Created by jonshaw on 23/09/15.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = SpringConfiguration.class)
-@WebIntegrationTest({
-        "spring.data.mongodb.database=" + BaseApiTest.DB_NAME,
-        "server.port=0",
-        "OAUTH_GOOGLE_TOKEN=Test"})
 public class UserControllerTest extends BaseApiTest {
 
     @Value("${local.server.port}")

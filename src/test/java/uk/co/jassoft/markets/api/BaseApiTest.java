@@ -1,5 +1,9 @@
 package uk.co.jassoft.markets.api;
 
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.WebIntegrationTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import uk.co.jassoft.markets.datamodel.user.User;
 import uk.co.jassoft.markets.repository.UserRepository;
 import uk.co.jassoft.utils.BaseTest;
@@ -15,6 +19,12 @@ import java.util.*;
 /**
  * Created by jonshaw on 19/08/15.
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringApplicationConfiguration(classes = SpringConfiguration.class)
+@WebIntegrationTest({
+        "spring.data.mongodb.database=" + BaseApiTest.DB_NAME,
+        "server.port=0",
+        "OAUTH_GOOGLE_TOKEN=Test"})
 public class BaseApiTest extends BaseTest {
 
     protected final String HEADER_SECURITY_TOKEN = "X-AuthToken";

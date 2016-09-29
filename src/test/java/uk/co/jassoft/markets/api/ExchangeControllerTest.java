@@ -1,17 +1,13 @@
 package uk.co.jassoft.markets.api;
 
-import uk.co.jassoft.markets.datamodel.company.Exchange;
-import uk.co.jassoft.markets.repository.ExchangeRepository;
 import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.response.Response;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import uk.co.jassoft.markets.datamodel.company.Exchange;
+import uk.co.jassoft.markets.repository.ExchangeRepository;
 
 import java.util.UUID;
 
@@ -21,11 +17,6 @@ import static org.hamcrest.CoreMatchers.equalTo;
 /**
  * Created by jonshaw on 25/09/15.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = SpringConfiguration.class)
-@WebIntegrationTest({
-        "spring.data.mongodb.database=" + BaseApiTest.DB_NAME,
-        "server.port=0"})
 public class ExchangeControllerTest extends BaseApiTest {
 
     @Autowired

@@ -1,5 +1,13 @@
 package uk.co.jassoft.markets.api;
 
+import com.jayway.restassured.http.ContentType;
+import com.jayway.restassured.response.Response;
+import org.apache.commons.lang.time.DateUtils;
+import org.joda.time.DateTime;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import uk.co.jassoft.markets.datamodel.company.Company;
 import uk.co.jassoft.markets.datamodel.company.sentiment.EntitySentiment;
 import uk.co.jassoft.markets.datamodel.company.sentiment.PeriodType;
@@ -7,20 +15,11 @@ import uk.co.jassoft.markets.datamodel.company.sentiment.StorySentiment;
 import uk.co.jassoft.markets.datamodel.story.NamedEntities;
 import uk.co.jassoft.markets.repository.CompanyRepository;
 import uk.co.jassoft.markets.repository.StorySentimentRepository;
-import com.jayway.restassured.http.ContentType;
-import com.jayway.restassured.response.Response;
-import org.apache.commons.lang.time.DateUtils;
-import org.joda.time.DateTime;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.UUID;
 
 import static com.jayway.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -28,11 +27,6 @@ import static org.hamcrest.CoreMatchers.equalTo;
 /**
  * Created by jonshaw on 29/09/15.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = SpringConfiguration.class)
-@WebIntegrationTest({
-        "spring.data.mongodb.database=" + BaseApiTest.DB_NAME,
-        "server.port=0"})
 public class SentimentControllerTest  extends BaseApiTest {
 
     @Autowired
