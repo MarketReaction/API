@@ -15,4 +15,6 @@ install:
 
 after_success:
   - docker tag marketreaction/api:$TRAVIS_BUILD_NUMBER marketreaction/api:latest
+  - docker tag marketreaction/api:${TRAVIS_BUILD_NUMBER}-x86 marketreaction/api:latest-x86
   - docker push marketreaction/api:latest
+  - docker push marketreaction/api:latest-x86
